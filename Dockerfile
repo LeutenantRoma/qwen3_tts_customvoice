@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt .
 
+RUN pip3 install torch==2.1.2 torchaudio==2.1.2 \
+    --index-url https://download.pytorch.org/whl/cu118
+
 RUN pip3 install --upgrade pip
 
 

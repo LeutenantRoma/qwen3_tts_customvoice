@@ -13,10 +13,10 @@ from qwen_tts import Qwen3TTSModel
 def synthesize(text: str):
 
     MODEL_ID = "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
-model = Qwen3TTSModel.from_pretrained(
+    model = Qwen3TTSModel.from_pretrained(
     "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
     device_map="cuda:0"
-)
+    )
     
     output = model.generate_custom_voice(
         text=text,

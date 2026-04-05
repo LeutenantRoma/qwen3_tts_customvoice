@@ -9,12 +9,13 @@ from qwen_tts import Qwen3TTSModel
 
 # Model loading and text processing
 # -------------------------------------------------------
-MODEL_ID = "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
-
-model = Qwen3TTSModel.from_pretrained(MODEL_ID)
-model = model.to("cuda")
 
 def synthesize(text: str):
+
+    MODEL_ID = "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+    model = Qwen3TTSModel.from_pretrained(MODEL_ID)
+    model = model.to("cuda")
+    
     output = model.generate_custom_voice(
         text=text,
         speaker="Ryan",
